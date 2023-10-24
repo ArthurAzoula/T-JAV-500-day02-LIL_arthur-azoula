@@ -9,8 +9,9 @@ public class Gecko {
 
     }
 
-    public Gecko(String name) {
+    public Gecko(String name, int age) {
         this.name = name;
+        this.age = age;
         System.out.println("Hello " + name + "!");
     }
 
