@@ -36,7 +36,7 @@ public class Gecko {
     }
 
     public void setEnergy(int energy) {
-        if (energy <= 100 &&  energy >= 0) {
+        if (energy <= 100 && energy >= 0) {
             this.energy = energy;
         }
     }
@@ -82,19 +82,7 @@ public class Gecko {
     }
 
     public void eat(String food) {
-        if (food.equals("Meat")) {
-            this.setEnergy(this.energy + 10);
-            System.out.println("Yummy!");
-        } else if (food.equals("Vegetable")) {
-            setEnergy(this.energy - 10);
-            System.out.println("Erk!");
-        } else {
-            System.out.println("I can't eat this!");
-        }
-    }
-
-    public void eat(String food){
-        switch (food.toLowerCase()){
+        switch (food.toLowerCase()) {
             case "meat":
                 System.out.println("Yummy!");
                 setEnergy(energy + 10);
@@ -106,6 +94,17 @@ public class Gecko {
             default:
                 System.out.println("I can't eat this!");
                 break;
+        }
+    }
+
+    public void work() {
+        if (this.energy >= 25) {
+            System.out.println("I'm working T.T");
+            this.setEnergy(this.energy - 9);
+        } else {
+            System.out.println("Heyyy I'm too sleepy, better take a nap!");
+            this.setEnergy(this.energy + 50);
+            break;
         }
     }
 

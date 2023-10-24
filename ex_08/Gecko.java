@@ -36,7 +36,7 @@ public class Gecko {
     }
 
     public void setEnergy(int energy) {
-        if (energy <= 100 &&  energy >= 0) {
+        if (energy <= 100 && energy >= 0) {
             this.energy = energy;
         }
     }
@@ -81,8 +81,8 @@ public class Gecko {
         }
     }
 
-    public void eat(String food){
-        switch (food.toLowerCase()){
+    public void eat(String food) {
+        switch (food.toLowerCase()) {
             case "meat":
                 System.out.println("Yummy!");
                 setEnergy(energy + 10);
@@ -98,17 +98,16 @@ public class Gecko {
     }
 
     public void work() {
-        for (int i = 0; i < 8; i++) {
-            if (this.energy >= 25) {
-                System.out.println("I'm working T.T");
-                this.setEnergy(this.energy - 9);
-            } else {
-                System.out.println("Heyyy I'm too sleepy, better take a nap!");
-                setEnergy(this.energy + 50);
-                break;
-            }
+        if (this.energy >= 25) {
+            System.out.println("I'm working T.T");
+            this.setEnergy(this.energy - 9);
+        } else {
+            System.out.println("Heyyy I'm too sleepy, better take a nap!");
+            setEnergy(this.energy + 50);
+            break;
         }
     }
+
 
     public void fraternize(Object friend) {
         if (friend instanceof Gecko) {
@@ -118,10 +117,10 @@ public class Gecko {
                 System.out.println("I'm going to drink with " + friend.getName() + "!");
                 System.out.println("I'm going to drink with " + this.name + "!");
             } else if (!(this.energy >= 30) && friend.getEnergy() >= 30) {
-                System.out.println("Sorry ", + friend.getName() + " I'm too tired to go out tonight.");
+                System.out.println("Sorry ", +friend.getName() + " I'm too tired to go out tonight.");
                 System.out.println("Oh! That's too bad, another time then!");
             } else if (this.energy >= 30 && !(friend.getEnergy() >= 30)) {
-                System.out.println("Sorry ", + this.name + " I'm too tired to go out tonight.");
+                System.out.println("Sorry ", +this.name + " I'm too tired to go out tonight.");
                 System.out.println("Oh! That's too bad, another time then!");
             } else {
                 System.out.println("Not today!");
