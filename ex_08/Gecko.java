@@ -86,7 +86,7 @@ public class Gecko {
             this.setEnergy(this.energy + 10);
             System.out.println("Yummy!");
         } else if (food.equals("Vegetable")) {
-            this.setEnergy(this.energy -= 10);
+            this.setEnergy(this.energy - 10);
             System.out.println("Erk!");
         } else {
             System.out.println("I can't eat this!");
@@ -106,17 +106,32 @@ public class Gecko {
         }
     }
 
-    public void fraternize(Gecko buddy) {
-
-    }
-
-    public void fraternize(Snake buddy) {
-        if(this.energy < 10) {
-            System.out.println("...");
+    public void fraternize(Object friend) {
+        if (friend instanceof Gecko) {
+            if (this.energy >= 30 && friend.getEnergy() >= 30) {
+                this.setEnergy(this.energy - 30);
+                friend.setEnergy(friend.getEnergy() - 30);
+                System.out.println("I'm going to drink with " + friend.getName() + "!");
+                System.out.println("I'm going to drink with " + this.name + "!");
+            } else if (!(this.energy >= 30) && friend.getEnergy() >= 30) {
+                System.out.println("Sorry ", + friend.getName() + " I'm too tired to go out tonight.");
+                System.out.println("Oh! That's too bad, another time then!");
+            } else if (this.energy >= 30 && !(friend.getEnergy() >= 30)) {
+                System.out.println("Sorry ", + this.name + " I'm too tired to go out tonight.");
+                System.out.println("Oh! That's too bad, another time then!");
+            } else {
+                System.out.println("Not today!");
+                System.out.println("Not today!");
+            }
+        } else if (friend instanceof Snake) {
+            if (this.energy >= 10) {
+                System.out.println("LET'S RUN AWAY!!!");
+                this.setEnergy(0);
+            }
         } else {
-            System.out.println("LET'S RUN AWAY!!!");
-            setEnergy(0);
+            System.out.println("...");
         }
+
     }
 
 }
