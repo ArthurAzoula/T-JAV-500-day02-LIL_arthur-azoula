@@ -81,15 +81,19 @@ public class Gecko {
         }
     }
 
-    public void eat(String food) {
-        if (food.equals("Meat")) {
-            this.setEnergy(this.energy + 10);
-            System.out.println("Yummy!");
-        } else if (food.equals("Vegetable")) {
-            this.setEnergy(this.energy - 10);
-            System.out.println("Erk!");
-        } else {
-            System.out.println("I can't eat this!");
+    public void eat(String food){
+        switch (food.toLowerCase()){
+            case "meat":
+                System.out.println("Yummy!");
+                setEnergy(energy + 10);
+                break;
+            case "vegetable":
+                System.out.println("Erk!");
+                setEnergy(energy - 10);
+                break;
+            default:
+                System.out.println("I can't eat this!");
+                break;
         }
     }
 

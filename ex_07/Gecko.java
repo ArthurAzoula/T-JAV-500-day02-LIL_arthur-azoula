@@ -93,16 +93,19 @@ public class Gecko {
         }
     }
 
-    public void work() {
-        for (int i = 0; i < 8; i++) {
-            if (this.energy >= 25) {
-                System.out.println("I'm working T.T");
-                this.setEnergy(this.energy - 9);
-            } else {
-                System.out.println("Heyyy I'm too sleepy, better take a nap!");
-                this.setEnergy(this.energy + 50);
+    public void eat(String food){
+        switch (food.toLowerCase()){
+            case "meat":
+                System.out.println("Yummy!");
+                setEnergy(energy + 10);
                 break;
-            }
+            case "vegetable":
+                System.out.println("Erk!");
+                setEnergy(energy - 10);
+                break;
+            default:
+                System.out.println("I can't eat this!");
+                break;
         }
     }
 
