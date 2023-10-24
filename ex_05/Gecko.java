@@ -9,9 +9,8 @@ public class Gecko {
 
     }
 
-    public Gecko(String name, int age) {
+    public Gecko(String name) {
         this.name = name;
-        this.age = age;
         System.out.println("Hello " + name + "!");
     }
 
@@ -54,6 +53,16 @@ public class Gecko {
             default:
                 System.out.println("Impossible Gecko");
                 break;
+        }
+    }
+
+    public void hello(string name) {
+        System.out.println("Hello " + name + ", I'm " + this.name + "!");
+    }
+
+    public void hello(int name) {
+        for (int i = 0; i < name; i++) {
+            System.out.println("Hello, I'm " + this.name + "!");
         }
     }
 
