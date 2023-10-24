@@ -36,8 +36,8 @@ public class Gecko {
     }
 
     public void setEnergy(int energy) {
-        if (this.energy + energy <= 100 && this.energy + energy >= 0) {
-            this.energy += energy;
+        if (energy <= 100 &&  energy >= 0) {
+            this.energy = energy;
         }
     }
 
@@ -83,10 +83,10 @@ public class Gecko {
 
     public void eat(String food) {
         if (food.equals("Meat")) {
-            setEnergy(-10);
+            this.setEnergy(this.energy + 10);
             System.out.println("Yummy!");
         } else if (food.equals("Vegetable")) {
-            setEnergy(-10);
+            this.setEnergy(this.energy - 10);
             System.out.println("Erk!");
         } else {
             System.out.println("I can't eat this!");

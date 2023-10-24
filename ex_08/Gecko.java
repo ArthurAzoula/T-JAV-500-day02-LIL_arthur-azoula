@@ -86,7 +86,7 @@ public class Gecko {
             this.setEnergy(this.energy + 10);
             System.out.println("Yummy!");
         } else if (food.equals("Vegetable")) {
-            setEnergy(this.energy - 10);
+            this.setEnergy(this.energy -= 10);
             System.out.println("Erk!");
         } else {
             System.out.println("I can't eat this!");
@@ -100,9 +100,22 @@ public class Gecko {
                 this.setEnergy(this.energy - 9);
             } else {
                 System.out.println("Heyyy I'm too sleepy, better take a nap!");
-                this.setEnergy(this.energy + 50);
+                setEnergy(this.energy + 50);
                 break;
             }
+        }
+    }
+
+    public void fraternize(Gecko buddy) {
+
+    }
+
+    public void fraternize(Snake buddy) {
+        if(this.energy < 10) {
+            System.out.println("...");
+        } else {
+            System.out.println("LET'S RUN AWAY!!!");
+            setEnergy(0);
         }
     }
 
