@@ -1,6 +1,7 @@
 public class Gecko {
 
     private String name = "Unknown";
+    private int energy = 100;
     private int age;
 
     public Gecko() {
@@ -28,6 +29,16 @@ public class Gecko {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getEnergy() {
+        return this.energy;
+    }
+
+    public void setEnergy(int energy) {
+        if (this.energy + energy <= 100 && this.energy + energy >= 0) {
+            this.energy += energy;
+        }
     }
 
     public void status() {
@@ -67,6 +78,31 @@ public class Gecko {
     public void hello(int name) {
         for (int i = 0; i < name; i++) {
             System.out.println("Hello, I'm " + this.name + "!");
+        }
+    }
+
+    public void eat(String food) {
+        if (food.equals("Meat")) {
+            setEnergy(-10);
+            System.out.println("Yummy!");
+        } else if (food.equals("Vegetable")) {
+            setEnergy(-10);
+            System.out.println("Erk!");
+        } else {
+            System.out.println("I can't eat this!");
+        }
+    }
+
+    public void work() {
+        for (int i = 0; i < 8; i++) {
+            if (this.energy >= 25) {
+                System.out.println("I'm working T.T");
+                setEnergy(-9);
+            } else {
+                System.out.println("Heyyy I'm too sleepy, better take a nap!");
+                setEnergy(50);
+                break;
+            }
         }
     }
 

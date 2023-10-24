@@ -1,17 +1,21 @@
 public class Gecko {
 
     private String name = "Unknown";
-    privat int energy = 100;
+    private int energy = 100;
     private int age;
 
     public Gecko() {
-
         System.out.println("Hello!");
-
     }
 
     public Gecko(String name) {
         this.name = name;
+        System.out.println("Hello " + name + "!");
+    }
+
+    public Gecko(String name, int age) {
+        this.name = name;
+        this.age = age;
         System.out.println("Hello " + name + "!");
     }
 
@@ -33,7 +37,7 @@ public class Gecko {
 
     public void setEnergy(int energy) {
         if (this.energy + energy <= 100 && this.energy + energy >= 0) {
-            this.energy + energy = 100;
+            this.energy += energy;
         }
     }
 
@@ -67,7 +71,7 @@ public class Gecko {
         }
     }
 
-    public void hello(string name) {
+    public void hello(String name) {
         System.out.println("Hello " + name + ", I'm " + this.name + "!");
     }
 

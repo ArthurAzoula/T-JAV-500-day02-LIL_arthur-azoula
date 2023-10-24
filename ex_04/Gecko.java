@@ -4,13 +4,17 @@ public class Gecko {
     private int age;
 
     public Gecko() {
-
         System.out.println("Hello!");
-
     }
 
     public Gecko(String name) {
         this.name = name;
+        System.out.println("Hello " + name + "!");
+    }
+
+    public Gecko(String name, int age) {
+        this.name = name;
+        this.age = age;
         System.out.println("Hello " + name + "!");
     }
 
