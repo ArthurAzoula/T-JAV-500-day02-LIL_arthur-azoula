@@ -36,8 +36,12 @@ public class Gecko {
     }
 
     public void setEnergy(int energy) {
-        if (energy <= 100 && energy >= 0) {
+        if (energy <= 100 &&  energy >= 0) {
             this.energy = energy;
+        } else if (energy > 100) {
+            this.energy = 100;
+        } else if (energy < 0) {
+            this.energy = 0;
         }
     }
 

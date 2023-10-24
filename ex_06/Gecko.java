@@ -38,6 +38,10 @@ public class Gecko {
     public void setEnergy(int energy) {
         if (energy <= 100 &&  energy >= 0) {
             this.energy = energy;
+        } else if (energy > 100) {
+            this.energy = 100;
+        } else if (energy < 0) {
+            this.energy = 0;
         }
     }
 
@@ -85,11 +89,11 @@ public class Gecko {
         switch (food.toLowerCase()){
             case "meat":
                 System.out.println("Yummy!");
-                setEnergy(energy + 10);
+                setEnergy(this.energy + 10);
                 break;
             case "vegetable":
                 System.out.println("Erk!");
-                setEnergy(energy - 10);
+                setEnergy(this.energy - 10);
                 break;
             default:
                 System.out.println("I can't eat this!");
