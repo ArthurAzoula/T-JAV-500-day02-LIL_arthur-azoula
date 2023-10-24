@@ -108,7 +108,6 @@ public class Gecko {
         } else {
             System.out.println("Heyyy I'm too sleepy, better take a nap!");
             this.setEnergy(this.energy + 50);
-            break;
         }
     }
 
